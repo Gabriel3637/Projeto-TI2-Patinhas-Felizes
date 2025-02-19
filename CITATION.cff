@@ -1,0 +1,28 @@
+cff-version: 1.0.1
+message: Please cite this software using these metadata.
+title: Patinhas Felizes
+authors:
+  - family-names: Valedo Batista Silva
+    given-names: Gabriel
+  - family-names: Giberti Piló Fernandes
+    given-names: Henrique
+  - family-names: Amaral Passos Figueiredo
+    given-names: Leonardo
+  - family-names: Toshio Scarpelli Yamada
+    given-names: Erick
+  - name-suffix: Professor
+    affiliation: PUC Minas
+    family-names: Vieira Carneiro 
+    given-names: Rommel
+  - name-suffix: Professor
+    affiliation: PUC Minas
+    family-names: Mara Freitas Diniz
+    given-names: Luciana
+keywords:
+  - Pets
+  - Adoção
+  - inteligência artificial
+repository-code: https://github.com/ICEI-PUC-Minas-CC-TI/plmg-cc-ti2-2024-2-g21-patinhasfelizes
+license: CC-BY-4.0
+version: 1.0.0
+date-released: 2024-11-28

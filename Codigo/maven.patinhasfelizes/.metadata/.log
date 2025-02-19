@@ -1,0 +1,13 @@
+!SESSION 2025-02-19 14:57:21.881 -----------------------------------------------
+eclipse.buildId=4.32.0.20240606-1231
+java.version=21.0.6
+java.vendor=Ubuntu
+BootLoader constants: OS=linux, ARCH=x86_64, WS=gtk, NL=pt_BR
+Framework arguments:  -product org.eclipse.epp.package.jee.product
+Command-line arguments:  -os linux -ws gtk -arch x86_64 -product org.eclipse.epp.package.jee.product
+
+!ENTRY ch.qos.logback.classic 1 0 2025-02-19 14:57:25.766
+!MESSAGE Activated before the state location was initialized. Retry after the state location is initialized.
+
+!ENTRY ch.qos.logback.classic 1 0 2025-02-19 14:57:55.980
+!MESSAGE Logback config file: /home/gabriel/Documentos/Projetos_git/Projeto-TI2-Patinhas-Felizes/Codigo/maven.patinhasfelizes/.metadata/.plugins/org.eclipse.m2e.logback/logback.2.6.1.20240411-1122.xml

@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+  <title>Cadastro ONG</title>
+  <link rel="stylesheet" href="./style.css" />
+</head>
+
+<header>
+  <h1>Cadastro ONG</h1>
+  
+</header>
+
+<body> 
+  <main class="ACac_pagina-container">
+    <div class="AC_formularios-container">
+      <div class="AC_formulario-circle">
+        <label>Inserir html da logo</label>
+        <input class="AC_input-text-logo" id="AC_input-logo" />
+      </div>
+
+      <div class="AC_formulario-box">
+        <label>CNPJ</label>
+        <input type="number" class="AC_input-text" id="cnpj-input" />
+        <label>Endereço</label>
+        <input class="AC_input-text" id="endereco-input" />
+        <label>Telefone</label>
+        <input type="number" class="AC_input-text" id="telefone-input" />
+        <label>E-mail</label>
+        <input class="AC_input-text" id="email-input" />
+      </div>
+      <div class="AC_formulario-box">
+        <label>Nome</label>
+        <input class="AC_input-text" id="nome-input" />
+        <label>História</label>
+        <input class="AC_input-text-historia" id="historia-input" />
+        <label>Senha</label>
+        <input class="AC_input-text" id="senha-input" />
+        <label>Confirmar Senha</label>
+        <input class="AC_input-text" id="confirmar-senha-input" />
+
+        <div id="confirmar-senha-msg-erro">Senhas informadas diferentes</div>
+      </div>
+    </div>
+    <div class="AC_botao-cadastro-container">
+      <button onclick="AC_botaoCadastrarOnClick()" class="AC_botao-cadastro">Cadastrar</button>
+    </div>
+  </main>
+  <script src="../script-bd/script.js"></script>
+  <footer class="AC_footer">
+    <div>
+      <p>&copy; Patinhas Felizes</p>
+      <p>Conexão entre ONGs e Adotantes!</p>
+    </div>
+  </footer>
+
+
+</body>
+
+</html>

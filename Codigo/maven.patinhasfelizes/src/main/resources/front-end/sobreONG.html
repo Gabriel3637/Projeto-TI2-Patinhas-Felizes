@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="../front-end/style.css">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+
+  <title>Sobre a ONG</title>
+</head>
+
+<header>
+  <div class="home">
+     <a href="./index.html">
+  <img src="../imagens/patinhaLogo.png" alt="logo" class="logo">
+    </a>
+  </div>
+  <nav>
+    <a href="./doacao.html">Doar</a>
+    <a href="./encontreiAnimal.html">Encontrei um Animal</a>
+    <a href="./sobreONG.html">Sobre a ONG</a>
+    <a href="./perfil.html">
+      <img src="../imagens/user_icon.png" alt="user-icon" class="logo">
+    </a>
+  </nav>
+</header>
+
+<body onload="ACmostrarDados()">
+  <main class="AC_main_ong">
+    <div class="row">
+      <div id="LCmsg" class="col-sm-10 offset-sm-1 ">
+          <!--Mensagem de erro-->
+      </div>
+    </div>
+    <img src="../imagens/gatocarregando-unscreen.gif" alt="Carregando" id="GV_imagemdesitecarregando" class="GV_sitecarregando">
+    <div class="AC_grid_ongmain">
+      <div class="AC_foto-container2">
+        <div class="Perfil-boxONG">
+          <div class="container">
+              <div class="row">
+                  <div class="col-5">
+                    <label class="AC_input-text"><b>Nome:</b> <span id="nomeONG"></span></label>
+                  </div>
+                  <div class="col-7">
+                    <label class="AC_input-text"><b>CNPJ:</b> <span id="CNPJONG"></span></label>
+                  </div>
+              </div>
+              <div class="row">
+                  <div class="col-5">
+                    <label class="AC_input-text"><b>Telefone:</b> <span id="telefoneONG"></span></label>
+                  </div>
+                    <div class="col-7">
+                    <label class="AC_input-text"><b>E-mail:</b> <span id="emailONG"></span></label>
+                  </div>
+              </div>
+              <div class="row">
+                   <label class="AC_input-text"><b>Endereço:</b> <span id="enderecoONG"></span></label>
+              </div>
+          </div>
+        </div>
+      </div>
+      <div class="AC_foto-container">
+        <img id="imagem" src="" alt="Logo da ong" width=200>
+      </div>
+      <div class="AC_Historia-container">
+        <div>
+          <h2 class="AC_Historia-text">Mais informações</h2>
+        </div>
+        <div class="AC_flex-container">
+          <div class="Dados-boxONG">
+            <label>
+              <h4> História </h4>
+            </label>
+            <label class="input-text"><span id="historiaONG"></span></label>
+          </div>
+          <div class="Dados-boxONG">
+            <label>
+              <h4> Local </h4>
+            </label><br>
+            <iframe
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3750.960884856249!2d-43.99671402494987!3d-19.926053081461514!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xa69777b4492739%3A0xda1e97cb5b163931!2sPUC%20Minas%20Virtual!5e0!3m2!1spt-BR!2sbr!4v1718165472618!5m2!1spt-BR!2sbr"
+              width="235" height="118" style="border:0;" allowfullscreen="" loading="lazy"
+              referrerpolicy="no-referrer-when-downgrade"></iframe>
+          </div>
+          <div class="Dados-boxONG">
+            <label>
+              <h4> Prêmios </h4>
+            </label>
+            <ul>
+              <li>Caridade Animal</li>
+              <li>Cidade Amiga dos Animais</li>
+              <li> Expressão de Ecologia</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <footer class="AC_footer">
+    <div>
+      <p>&copy; Patinhas Felizes</p>
+      <p>Conexão entre ONGs e Adotantes!</p>
+    </div>
+  </footer>
+
+  <script src="../script-bd/script.js"></script> <!-- Inclui o arquivo JavaScript -->
+</body>
+</html>

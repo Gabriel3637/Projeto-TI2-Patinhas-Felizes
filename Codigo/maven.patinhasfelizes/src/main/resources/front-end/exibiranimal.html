@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Patinhas Felizes</title>
+  <link rel="icon" type="image/x-icon" href="imgs/favicon.ico">
+  <link rel="stylesheet" href="./style.css">
+</head>
+
+<body onload="mostrarDadosJP()">
+
+  <header>
+    <div class="home">
+      <a href="./index.html">
+        <img src="../imagens/patinhaLogo.png" alt="logo" class="logo">
+      </a>
+    </div>
+    <nav>
+      <a href="./doacao.html">Doar</a>
+      <a href="./encontreiAnimal.html">Encontrei um Animal</a>
+      <a href="./sobreONG.html">Sobre a ONG</a>
+      <a href="./perfil.html">
+        <img src="../imagens/user_icon.png" alt="user-icon" class="logo">
+      </a>
+    </nav>
+  </header>
+
+  <main>
+    <img src="../imagens/gatocarregando-unscreen.gif" alt="Carregando" id="GV_imagemdesitecarregando" class="GV_sitecarregando">
+    <div class="GV_barrafiltro">
+      <div id="filtro-containerJP">
+        <div class="filter-containerJP">
+          <label for="generoJP">Gênero:</label>
+          <select id="generoJP">
+            <option value="T">Todos</option>
+            <option value="M">Macho</option>
+            <option value="F">Fêmea</option>
+          </select>
+          <label for="tamanhoJP">Porte:</label>
+          <select id="tamanhoJP">
+            <option value="T">Todos</option>
+            <option value="P">Pequeno</option>
+            <option value="M">Médio</option>
+            <option value="G">Grande</option>
+          </select>
+          <label for="especieJP">Espécie:</label>
+          <select id="especieJP">
+            <option value="T">Todos</option>
+            <option value="CA">Cachorro</option>
+            <option value="GA">Gato</option>
+            <option value="CO">Coelho</option>
+            <option value="RO">Roedores</option>
+          </select>
+          <button id="botaoModalMatchJP">
+            <img id="iconeMatch" src="../imagens/download-removebg-preview.png" alt="">
+          </button>
+          <button id="botaoModalMatch2JP">
+            <img id="iconeMatch" src="../imagens/download-removebg-preview.png" alt="">
+          </button>
+        </div>
+      </div>
+    </div>
+    <div id="cardsJP">
+    </div>
+    <div id="modaisJP">
+      <div class="modalJP">
+        <div id="cabecalhoModalJP">
+          <h1>Vamos Adotar?</h1>
+          <span class="fechar-modalJP"> × </span>
+        </div>
+        <div class="corpo_modalJP">
+          <section class="flexPerfilJP">
+            <div>
+              <img id="avatarPrincipalJP" src="../imagens/jasmin.jpg" alt="">
+            </div>
+            <div class="informacoesJP">
+              <div id="nomeAutorJP">
+                <p>Jasmin</p>
+              </div>
+              <p><strong>Idade:</strong> 5 meses</p>
+              <p><strong>Raça:</strong> Pembroke Welsh Corgi</p>
+              <p><strong>Vacinação:</strong> Gripe canina; Giárdia; Antirrábica; Leishmaniose </p>
+              <p><strong>Castrado:</strong> Não</p>
+              <div id="descricaoJP">
+                <h4>História:</h4>
+                <p>
+                  Jasmin é uma cadela adorável, resgatada das ruas de Belo Horizonte por uma gentil alma que a
+                  levou para um abrigo de animais. Com seus olhos brilhantes e uma energia contagiante, Jasmin logo
+                  se tornou a favorita entre os voluntários do abrigo.
+                  Apesar de ter sido resgatada, Jasmin não perdeu sua alegria de viver. Ela é uma cachorrinha agitada,
+                  sempre pronta para brincar e explorar novos lugares. Seu coração transborda amor e gratidão, e ela
+                  anseia por encontrar uma família para compartilhar todo esse amor.
+                </p>
+              </div>
+              <button class="button-44JP"></button>
+            </div>
+          </section>
+        </div>
+      </div>
+    </div>
+    <div class="mascaraJP"></div>
+    <div id="modaisMatchJP">
+      <div class="modalMatchJP">
+        <div id="cabecalhoModalJP">
+          <h1>Vamos Adotar?</h1>
+          <span class="fechar-modal-MatchJP"> × </span>
+        </div>
+        <div class="corpo_modalJP">
+          <section class="section_Modal_MatchJP">
+            <img id="imgMatchJP" src="../../assets/img/jasmin.jpg" alt="">
+            <button id="slideDireitaJP"> > </button>
+            <button id="slideEsquerdaJP">
+              < </button>
+                <section class="informacoesModalMatchJP">
+                  <p id="nomeMatchJP">Jasmin</p>
+                  <p id="descricaoMatchJP">Calma, paciente e atenciosa! Alguém viu uma gatinha?</p>
+                </section>
+          </section>
+          <div class="flexIconesMatchJP">
+            <img id="iconeLikeJP" src="../imagens/iconCheck.png" alt="">
+            <img id="iconeXJP" src="../imagens/iconX.png" alt="">
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="mascaraJP"></div>
+    <div id="modaisMatch2JP">
+      <div class="modalMatch2JP">
+        <div id="cabecalhoModalJP">
+          <h1>Vamos Adotar?</h1>
+          <span class="fechar-modal-Match2JP"> × </span>
+        </div>
+        <div class="corpo_modalJP">
+          <div id="textoResultadoMatchJP">
+            <h1>Deu Match!</h1>
+          </div>
+          <section class="section_Modal_Match_ResultadoJP">
+            <img id="avatarPrincipalMatchAnimalJP" src="../../assets/img/jasmin.jpg" alt="">
+            <section class="informacoesModalMatchResultadoJP">
+              <img id="avatarPrincipalMatchUsuarioJP" src="../../assets/img/jasmin.jpg" alt="">
+            </section>
+          </section>
+          <button class="button-matchJP" id="adotarMatchJP" >Adotar!</button>
+          <button class="button-matchJP" id="voltarMatchJP">Voltar</button>
+        </div>
+      </div>
+    </div>
+    <div class="mascaraJP"></div>
+  </main>
+
+
+  <footer class="footer-estilizadoJP">
+    <div>
+      <p>&copy; <span id="dataJP"></span> Patinhas Felizes</p>
+      <p>Conexão entre ONGs e Adotantes!</p>
+    </div>
+  </footer>
+
+
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"
+    integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+  <script src="../script-bd/script.js" charset="utf-8"></script>
+  <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+</body>
+
+</html>

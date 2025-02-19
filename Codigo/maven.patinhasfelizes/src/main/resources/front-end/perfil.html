@@ -1,0 +1,409 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./style.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+
+    <title>Perfil</title>
+</head>
+
+<body onload="LCverificarPerfil()">
+    <header>
+        <div class="home">
+            <a href="./index.html">
+                <img src="../imagens/patinhaLogo.png" alt="logo" class="logo">
+            </a>
+        </div>
+        <nav>
+            <a href="./doacao.html">Doar</a>
+            <a href="./encontreiAnimal.html">Encontrei um Animal</a>
+            <a href="./sobreONG.html">Sobre a ONG</a>
+            <a href="./perfil.html">
+                <img src="../imagens/user_icon.png" alt="user-icon" class="logo">
+            </a>
+        </nav>
+    </header>
+
+    <main class="HG_container">
+        <img src="../imagens/gatocarregando-unscreen.gif" alt="Carregando" id="GV_imagemdesitecarregando" class="GV_sitecarregando GV_sitecarregando_Modificacao2">
+        <div class="container">
+            <div class="row">
+                <div id="LCmsg" class="col-sm-10 offset-sm-1 ">
+                    <!--Mensagem de erro-->
+                </div>
+            </div>
+
+            <div class="row HG_fill_green_perfil">
+                <div class="row HG_div-titulo">
+                    <h3 class="HG_titulo">Perfil</h3>
+                </div>
+                <div class="row HG_fill_green_cadastro">
+                    <form id="form-contato">
+                        <div class="form-group row align-items-center mb-3">
+                            <div class="col-sm-3 text-center file-input-container GV_inputimagemcontainer">
+                                <label for="inputImagem">
+                                    <img src="https://as2.ftcdn.net/v2/jpg/03/49/49/79/1000_F_349497933_Ly4im8BDmHLaLzgyKg2f2yZOvJjBtlw5.jpg"
+                                        alt="imagemPerfil" class="img-thumbnail perfil-img" id="imagemPerfil">
+                                </label>
+                                <input type="text" class="form-control mt-2" id="inputImagem"
+                                    placeholder="Informe o url">
+                            </div>
+                            <div class="col-sm-9">
+                                <div class="form-group row align-items-center mb-3 GV_divperfilusuarioinputs">
+                                    <label for="inputNome" class="HG_label_box col-sm-3">Nome:</label>
+                                    <div class="col-sm-9">
+                                        <input type="text" class="form-control" id="inputNome" required
+                                            placeholder="Informe o nome">
+                                    </div>
+                                </div>
+                                <div class="form-group row align-items-center mb-3 GV_divperfilusuarioinputs">
+                                    <label for="inputEmail" class="HG_label_box col-sm-3">E-mail:</label>
+                                    <div class="col-sm-9">
+                                        <input type="email" class="form-control" id="inputEmail" required
+                                            placeholder="Informe o e-mail">
+                                    </div>
+                                </div>
+                                <div class="form-group row align-items-center mb-3 GV_divperfilusuarioinputs">
+                                    <label for="inputCPF" class="HG_label_box col-sm-3">CPF:</label>
+                                    <div class="col-sm-9">
+                                        <input type="text" class="form-control" id="inputCPF" required name="cpf" pattern="[0-9]{3}\.[0-9]{3}\.[0-9]{3}-[0-9]{2}"
+                                            placeholder="xxx.xxx.xxx-xx">
+                                    </div>
+                                </div>
+                                <div class="form-group row align-items-center mb-3 GV_divperfilusuarioinputs">
+                                    <label for="inputTelefone" class="HG_label_box col-sm-3">Telefone:</label>
+                                    <div class="col-sm-9">
+                                        <input type="tel" class="form-control" id="inputTelefone" required name="telefone" pattern="\([0-9]{2}\)[\s][9]{1}[0-9]{4}-[0-9]{4}"
+                                            placeholder="(xx) 9xxxx-xxxx">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="form-group row align-items-center mb-3 GV_divperfilusuarioinputs">
+                            <label for="inputCasa" class="HG_label_box col-sm-3">Moradia:</label>
+                            <div class="col-sm-9">
+                              <select class="form-control" id="inputCasa" required>
+                                <option value="" disabled selected>Selecione</option>
+                                <option value="casa">Casa</option>
+                                <option value="apartamento">Apartamento</option>
+                              </select>
+                            </div>
+                        </div>
+                        <div class="form-group row align-items-center mb-3 GV_divperfilusuarioinputs">
+                            <label for="inputNascimento" class="HG_label_box col-sm-3">Nascimento:</label>
+                            <div class="col-sm-9">
+                                <input type="date" class="form-control" id="inputNascimento" required name="datanascimento"
+                                placeholder="Informe a data de nascimento">
+                            </div>
+                        </div>
+                        <div class="form-group row align-items-center mb-3 GV_divperfilusuarioinputs">
+                            <label for="inputSenhaAtual" class="HG_label_box col-sm-4">Senha atual:</label>
+                            <div class="col-sm-8">
+                                <input type="password" class="form-control" id="inputSenhaAtual" required
+                                    placeholder="Informe sua senha atual">
+                            </div>
+                        </div>
+                        <div class="form-group row align-items-center mb-3 GV_divperfilusuarioinputs">
+                            <label for="inputSenha" class="HG_label_box col-sm-4">Nova senha:</label>
+                            <div class="col-sm-8">
+                                <input type="password" class="form-control" id="inputNovaSenha"
+                                    placeholder="Informe sua nova senha">
+                            </div>
+                        </div>
+                        <div class="form-group row align-items-center mb-3 GV_divperfilusuarioinputs">
+                            <label for="inputConfirma" class="HG_label_box col-sm-4">Confirmar senha:</label>
+                            <div class="col-sm-8">
+                                <input type="password" class="form-control" id="inputConfirma"
+                                    placeholder="Confirme sua nova senha">
+                            </div>
+                        </div>
+
+                        <div class="form-group row align-items-center mb-2">
+                            <label class="HG_label-box col-sm-2">Etiquetas:</label>
+                        </div>
+
+                        <div class="form-group row align-items-center mb-2">
+                            <div class="col-sm-6">
+                                <div class="form-group row align-items-center mb-3">
+                                    <div class="col-sm-10">
+                                        <div class="form-check">
+                                            <input class="form-check-input" type="checkbox" value="Brincalhao"
+                                                id="checkboxEnergetico"
+                                                onclick="toggleExclusive('checkboxEnergetico', 'checkboxTranquilo')">
+                                            <label class="form-check-label" for="checkboxEnergetico">
+                                                Brincalhao
+                                            </label>
+                                        </div>
+                                        <div class="form-check">
+                                            <input class="form-check-input" type="checkbox" value="Gosta de caminhar"
+                                                id="checkboxCarente"
+                                                onclick="toggleExclusive('checkboxCarente', 'checkboxAventureiro')">
+                                            <label class="form-check-label" for="checkboxCarente">
+                                                Gosta de Caminhar
+                                            </label>
+                                        </div>
+                                        <div class="form-check">
+                                            <input class="form-check-input" type="checkbox" value="Extrovertido"
+                                                id="checkboxOcupado"
+                                                onclick="toggleExclusive('checkboxOcupado', 'checkboxSociavel')">
+                                            <label class="form-check-label" for="checkboxOcupado">
+                                                Extrovertido
+                                            </label>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-sm-6">
+                                <div class="form-group row align-items-center mb-3">
+                                    <div class="col-sm-12">
+                                        <div class="form-check">
+                                            <input class="form-check-input" type="checkbox" value="Calmo"
+                                                id="checkboxTranquilo"
+                                                onclick="toggleExclusive('checkboxTranquilo', 'checkboxEnergetico')">
+                                            <label class="form-check-label" for="checkboxTranquilo">
+                                                Calmo
+                                            </label>
+                                        </div>
+                                        <div class="form-check">
+                                            <input class="form-check-input" type="checkbox" value="Caseiro"
+                                                id="checkboxAventureiro"
+                                                onclick="toggleExclusive('checkboxAventureiro', 'checkboxCarente')">
+                                            <label class="form-check-label" for="checkboxAventureiro">
+                                                Caseiro
+                                            </label>
+                                        </div>
+                                        <div class="form-check">
+                                            <input class="form-check-input" type="checkbox" value="Introvertido"
+                                                id="checkboxSociavel"
+                                                onclick="toggleExclusive('checkboxSociavel', 'checkboxOcupado')">
+                                            <label class="form-check-label" for="checkboxSociavel">
+                                                Introvertido
+                                            </label>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="form-group row align-items-center mb-2">
+                            <div class="col-sm-12 text-center">
+                                <input type="button" class="btn btn-success" id="btnUpdate" value="Alterar">
+                                <input type="button" class="btn btn-warning" id="btnSair" value="Sair">
+                            </div>
+                        </div>
+                        <div class="form-group row align-items-center mb-2">
+                            <div class="col-sm-12 text-center">
+                                <input type="button" class="btn btn-danger" id="btnClear" value="Deletar">
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer class="footer-estilizadoJP">
+        <div>
+          <p>&copy; <span id="dataJP"></span> Patinhas Felizes</p>
+          <p>Conexão entre ONGs e Adotantes!</p>
+        </div>
+    </footer>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
+    <script src="../script-bd/script.js"></script>
+    <script>
+        $(document).ready(function () {
+            let user = LCgetUser();
+            var id = user.id;
+            init(id);
+            HG_loadProfileData(id);
+        });
+
+        function init(id) {
+            $("#btnUpdate").click(async function (event) {
+                try{
+                    GVescondermensagem();
+                    $("#GV_imagemdesitecarregando").removeClass("GV_esconder");
+                    
+                    /*if (!$('#form-contato')[0].checkValidity()) {
+                        LCdisplayMessage("Preencha o perfil com novas informações.");
+                        return;
+                    }*/
+                    event.preventDefault();
+
+                    let senha = $("#inputSenhaAtual").val();
+                    let novasenha = $("#inputNovaSenha").val();
+                    let confirma = $("#inputConfirma").val();
+                    let nome = $("#inputNome").val();
+                    let email = $("#inputEmail").val();
+                    let imagem = $("#inputImagem").val();
+                    let GV_campocpf = $("#inputCPF").val();
+                    let GV_camponascimento = $("#inputNascimento").val();
+                    let GV_campotelefone = $("#inputTelefone").val();
+                    let GV_campomoradia = $("#inputCasa").val();
+
+                    if (imagem === "") {
+                        imagem = "https://static.vecteezy.com/system/resources/previews/008/422/689/original/social-media-avatar-profile-icon-isolated-on-square-background-vector.jpg"
+                    }
+                    
+                    let GV_objverificarsenha = {
+                        senha: senha
+                    }
+
+                    if(await VerificarRealizarLoginUsuarioID(`http://localhost:6789/login/${id}`, GV_objverificarsenha) == null){
+                        throw new Error('Senha incorreta!');
+                    }
+                    
+                    if (novasenha !== confirma) {
+                        LCdisplayMessage("As senhas não coincidem. Por favor, tente novamente.");
+                        throw new Error('Senhas não coincidem!');
+                        return;
+                    }
+                    
+                    let cadastro = {
+                        id: id,
+                        nome: nome,
+                        email: email,
+                        senha: null,
+                        imagem: imagem,
+                        etiquetas: getSelectedOptions(),
+                        datanascimento: GV_camponascimento,
+                        telefone: GV_campotelefone,
+                        cpf: GV_campocpf,
+                        moradia: GV_campomoradia,
+                        autenticacao: senha
+                    };
+
+                    if(novasenha != ""){
+                        cadastro.senha = novasenha;
+                    }
+
+                    console.log('Verificando cadastro:', cadastro);
+                    
+                    await HG_alterUser(cadastro);
+                    LCdisplayMessage("Alterado!");
+                    location.href = location.href;
+                    $("#GV_imagemdesitecarregando").addClass("GV_esconder");
+                }catch(error){
+
+
+                    if (error.message === 'Failed to fetch') {
+
+                        console.error('Erro de rede: Não foi possível acessar o servidor. Ele pode estar fora do ar ou o endereço pode estar incorreto.');
+                        LCdisplayMessage('ERRO: Servidor nao encontrado.');
+
+                    } else if (error.message.includes('NetworkError') || error.message.includes('TypeError: Failed to fetch')) {
+
+                        console.error('Erro de rede: Falha na conexão. Verifique a rede ou o servidor.');
+                        LCdisplayMessage('ERRO: Servidor nao encontrado.');
+
+                    } else if(error.message == 'Senhas não coincidem!'){
+
+                        LCdisplayMessage('ERRO: Nova senha e confirmação não coincidem!');
+                        
+                    } else if(error.message == 'Senha incorreta!'){
+
+                        LCdisplayMessage('ERRO: Senha incorreta!');
+
+                    }
+
+                    console.log(error);
+                    $("#GV_imagemdesitecarregando").addClass("GV_esconder");
+                }
+            });
+
+            $("#btnClear").click(async function () {
+                try{
+                    $("#GV_imagemdesitecarregando").removeClass("GV_esconder");
+                    await HG_deleteUser(id);
+                    LCexcluirUsuarioLS();
+                    LCpaginaInicial();
+                    $("#GV_imagemdesitecarregando").addClass("GV_esconder");
+                }catch(error){
+                    LCdisplayMessage("ERRO: Servidor nao encontrado!");
+                    $("#GV_imagemdesitecarregando").addClass("GV_esconder");
+                }
+            });
+
+            $("#btnSair").click(function () {
+                localStorage.clear();
+                LCpaginaInicial();
+            });
+        }
+
+        function getSelectedOptions() {
+            var checkboxes = document.querySelectorAll('.form-check-input');
+            var selectedOptions = [];
+            checkboxes.forEach(function (checkbox) {
+                if (checkbox.checked) {
+                    selectedOptions.push(checkbox.value);
+                }
+            });
+            return selectedOptions;
+        }
+
+        async function HG_loadProfileData(id) {
+            try{
+                const profile = await HG_readUser(id);
+
+                $("#inputNome").attr("value", profile.nome);
+                $("#inputEmail").attr("value", profile.email);
+                if (profile.imagem != "") {
+                    $("#imagemPerfil").attr("src", profile.imagem);
+                    $("#inputImagem").attr("value", profile.imagem);
+                }
+                //$("#inputSenha").attr("value", profile.senha);
+                //$("#inputConfirma").attr("value", profile.senha);
+                $("#inputNascimento").attr("value", profile.datanascimento);
+                $("#inputTelefone").attr("value", profile.telefone);
+                $("#inputCPF").attr("value", profile.cpf);
+                document.getElementById("inputCasa").value = profile.moradia;
+
+                const tags = profile.etiquetas || [];
+                $("#checkboxEnergetico").prop("checked", tags.includes("Brincalhao"));
+                $("#checkboxCarente").prop("checked", tags.includes("Gosta de caminhar"));
+                $("#checkboxOcupado").prop("checked", tags.includes("Extrovertido"));
+                $("#checkboxTranquilo").prop("checked", tags.includes("Calmo"));
+                $("#checkboxAventureiro").prop("checked", tags.includes("Caseiro"));
+                $("#checkboxSociavel").prop("checked", tags.includes("Introvertido"));
+                $("#GV_imagemdesitecarregando").addClass("GV_esconder");
+            }catch(error){
+
+                imagemcarregando.classList.add("GV_esconder");
+
+                if (error.message === 'Failed to fetch') {
+
+                    console.error('Erro de rede: Não foi possível acessar o servidor. Ele pode estar fora do ar ou o endereço pode estar incorreto.');
+                    LCdisplayMessage('ERRO: Servidor nao encontrado.');
+
+                } else if (error.message.includes('NetworkError') || error.message.includes('TypeError: Failed to fetch')) {
+
+                    console.error('Erro de rede: Falha na conexão. Verifique a rede ou o servidor.');
+                    LCdisplayMessage('ERRO: Servidor nao encontrado.');
+
+                }
+
+                console.log(error);
+                LCdisplayMessage("ERRO!");
+                $("#GV_imagemdesitecarregando").addClass("GV_esconder");
+            }
+            
+        }
+
+        function toggleExclusive(checkboxId1, checkboxId2) {
+            let checkbox1 = document.getElementById(checkboxId1);
+            let checkbox2 = document.getElementById(checkboxId2);
+
+            if (checkbox1.checked) {
+                checkbox2.checked = false;
+            }
+        }
+    </script>
+</body>
+
+</html>

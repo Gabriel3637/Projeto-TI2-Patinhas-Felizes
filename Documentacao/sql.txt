@@ -1,0 +1,71 @@
+
+CREATE DATABASE patinhasfelizes;
+
+USE patinhasfelizes;
+
+CREATE TABLE usuario(
+id VARCHAR(255) NOT NULL PRIMARY KEY,
+email VARCHAR(255) NOT NULL,
+nome VARCHAR(255) NOT NULL,
+senha VARCHAR(255) NOT NULL,
+imagem VARCHAR(511),
+tags TEXT
+);
+
+CREATE TABLE ong(
+id VARCHAR(255) NOT NULL PRIMARY KEY,
+nome VARCHAR(255) NOT NULL,
+email VARCHAR(255) NOT NULL,
+senha VARCHAR(255) NOT NULL,
+cnpj VARCHAR(18) NOT NULL,
+endereco VARCHAR(255) NOT NULL,
+historia TEXT NOT NULL,
+logo VARCHAR(255) NOT NULL,
+telefone VARCHAR(15) NOT NULL
+);
+
+CREATE TABLE animais(
+id VARCHAR(255) NOT NULL PRIMARY KEY,
+nome VARCHAR(255) NOT NULL,
+especie VARCHAR(255) NOT NULL,
+porte VARCHAR(1),
+donoid VARCHAR(255),
+imagem TEXT,
+vacinado TEXT,
+tags TEXT,
+datasaida DATE,
+descricao TEXT,
+historia TEXT,
+raca VARCHAR(50),
+datanascimento DATE,
+castrado BOOLEAN NOT NULL,
+sexo VARCHAR(1) NOT NULL,
+urlsexo VARCHAR(255),
+ongid 	VARCHAR(255),
+CONSTRAINT fkonganimal FOREIGN KEY(ongid) REFERENCES ong(id),
+CONSTRAINT fkdonoanimal FOREIGN KEY(donoid) REFERENCES usuario(id),
+CONSTRAINT checarporte CHECK (porte IN ('P', 'M', 'G')),
+CONSTRAINT checarsexo CHECK (sexo IN ('F', 'M'))
+);
+
+CREATE TABLE comentarios(
+id VARCHAR(255) NOT NULL PRIMARY KEY,
+userid VARCHAR(255) NOT NULL,
+animalid VARCHAR(255) NOT NULL,
+content VARCHAR(1023) NOT NULL,
+CONSTRAINT fkcomentariouser FOREIGN KEY(userid) REFERENCES usuario(id),
+CONSTRAINT fkcomentarioanimal FOREIGN KEY(animalid) REFERENCES animais(id)
+);
+
+CREATE TABLE formulario(
+id VARCHAR(255) NOT NULL PRIMARY KEY,
+id_usuario VARCHAR(255) NOT NULL,
+id_animal VARCHAR(255) NOT NULL,
+telefone VARCHAR(15) NOT NULL,
+cpf VARCHAR(11) NOT NULL,
+endereco VARCHAR(255) NOT NULL,
+id_ong VARCHAR(255) NOT NULL,
+CONSTRAINT fkformularioanimal FOREIGN KEY(id_animal) REFERENCES animais(id),
+CONSTRAINT fkformulariouser FOREIGN KEY(id_usuario) REFERENCES usuario(id),
+CONSTRAINT fkongformulario FOREIGN KEY(id_ong) REFERENCES ong(id)
+);

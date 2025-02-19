@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="../front-end/style.css">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+  <title>Adotar Animal</title>
+</head>
+
+<body>
+  
+  <header>
+    <div class="home">
+      <a href="./index.html">
+        <img src="../imagens/patinhaLogo.png" alt="logo" class="logo">
+      </a>
+    </div>
+    <nav>
+      <a href="./doacao.html">Doar</a>
+      <a href="./encontreiAnimal.html">Encontrei um Animal</a>
+      <a href="./sobreONG.html">Sobre a ONG</a>
+      <a href="./perfil.html">
+        <img src="../imagens/user_icon.png" alt="user-icon" class="logo">
+      </a>
+    </nav>
+  </header>
+
+  <main>
+    <img src="../imagens/gatocarregando-unscreen.gif" alt="Carregando" id="GV_imagemdesitecarregando" class="GV_sitecarregando GV_sitecarregando_Modificacao2 GV_esconder">
+    <div class="container GV_containerformularioprincipal">
+      <div class="row div-titulo GV_tituloformulario">
+        <h3 class="titulo">Formulário para adoção</h3>
+      </div>
+
+      <div class="row fill_green GV_divformformulario">
+        <!--<h1 id="questionario">Questionário</h1>-->
+        <h1 id="questionario2"></h1>
+        <div class="row">
+          <div id="LCmsg" class="col-sm-10 offset-sm-1 ">
+              <!--Mensagem de erro-->
+          </div>
+      </div>
+        <form id="questionForm" method="get">
+          <div class="form-group row align-items-center">
+            <!--<div class="col-lg-6 col-xs-12">
+              <div class="form-group row align-items-center mb-3">
+                <label for="inputCPF" class="HG_label_box col-sm-2">CPF:</label>
+                <div class="col GV_inputsformulario">
+                  <input type="text" class="form-control" id="inputCPF" required placeholder="Informe o CPF">
+                </div>
+              </div>
+
+              <div class="form-group row align-items-center mb-3">
+                <label for="inputTelefone" class="HG_label_box col-sm-2">Telefone:</label>
+                <div class="col GV_inputsformulario">
+                  <input type="text" class="form-control" id="inputTelefone" required placeholder="Informe seu telefone">
+                </div>
+              </div>
+
+              <div class="form-group row align-items-center mb-3">
+                <label for="inputIdade" class="HG_label_box col-sm-2">Nascimento:</label>
+                <div class="col GV_inputsformulario">
+                      <input type="number" class="form-control" id="inputIdade" required placeholder="Digite sua idade"
+                         min="1" step="1">
+                      <input type="date" class="form-control" id="inputIdade" required placeholder="Digite sua idade">
+                </div>
+              </div>
+            </div>-->
+            
+            <div class="col-lg-12 col-xs-12">
+              <div class="form-group row align-items-center mb-3">
+                <label for="inputSenha" class="HG_label_box col-sm-2">Senha:</label>
+                <div class="col GV_inputsformulario">
+                  <input type="password" class="form-control" id="inputSenha" required placeholder="Informe sua senha">
+                </div>
+              </div>
+
+              <div class="form-group row align-items-center mb-3">
+                <label for="inputConfirma" class="HG_label_box col-sm-2">Confirme:</label>
+                <div class="col GV_inputsformulario">
+                  <input type="password" class="form-control" id="inputConfirma" required placeholder="Confirme sua senha">
+                </div>
+              </div>
+            </div>
+          </div>
+          
+          <div class="form-group row align-items-center">
+            <div class="col-sm-12 text-center"><h1></h1></div>
+            <div class="col-sm-12 text-center">
+              <input type="button" class="btn btn-success" id="btnInsert" value="Enviar">
+              <input type="button" class="btn btn-secondary" id="btnClear" value="Limpar">
+            </div>
+          </div>
+        </form>
+      </div>
+    </div>
+  </main>
+
+  <footer class="footer-estilizadoJP">
+    <div>
+      <p>&copy; <span id="dataJP"></span> Patinhas Felizes</p>
+      <p>Conexão entre ONGs e Adotantes!</p>
+    </div>
+  </footer>
+  
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
+    <script src="../script-bd/script.js"></script>
+    <script>
+      function formatarmesdadata(dataparaformatar){
+        let resp;
+        let GV_arraydata = dataparaformatar.split("-");
+        GV_arraydata[1] = (parseInt(GV_arraydata[1])-1).toString();
+        resp = GV_arraydata.join("-");
+        return resp;
+      }
+      function contaranos(datainicial, datafinal){
+        let GV_dateinicial = new Date(formatarmesdadata(datainicial));
+        let GV_datefinal = new Date(formatarmesdadata(datafinal));
+        let diferenca = GV_datefinal - GV_dateinicial;
+        let resp =  diferenca / (1000 * 60 * 60 * 24 * 365.25);
+        return Math.floor(resp);
+      }
+
+      function setaromaxdodate(){
+        let GV_inputidade = document.querySelector("#inputIdade");
+        let GV_hoje = new Date();
+        let GV_diaatual = (GV_hoje.getDate()).toString().padStart(2, '0');
+        let GV_messtual = (GV_hoje.getMonth() + 1).toString().padStart(2, '0');
+        let GV_anoatual = GV_hoje.getFullYear();
+
+        var GV_datestring = `${GV_anoatual}-${GV_messtual}-${GV_diaatual}`;
+        GV_inputidade.setAttribute("max", GV_datestring);
+      }
+
+
+      $(document).ready(function () {
+            
+            
+            init();
+        });
+
+        function init() {
+          let GV_imagemdesitecarregando = document.getElementById('GV_imagemdesitecarregando');
+
+          
+            $("#btnInsert").click(async function () {
+              try{
+                GV_imagemdesitecarregando.classList.remove('GV_esconder');
+
+                if (!$('#questionForm')[0].checkValidity()) {
+                  throw new Error('Preencha o formulário corretamente.');
+                }
+
+                let user = LCgetUser();
+                var senhaL = user.senha;
+
+                let senha = $("#inputSenha").val();
+                let confirma = $("#inputConfirma").val();
+                
+                let GV_loginteste = {
+                  senha: senha
+                }
+                
+                if (senha !== confirma) {
+
+                  throw new Error('Senhas não coincidem!');
+
+                }
+
+                if(await VerificarRealizarLoginUsuarioID(`http://localhost:6789/login/${user.id}`, GV_loginteste) == null) {
+                  
+                  throw new Error('Senha incorreta!');
+
+                }
+                
+                let cadastroForm = {
+                  id: Date.now().toString(),
+                  usuarioid: user.id,
+                  animalid: new URLSearchParams(window.location.search).get('id')
+                };
+
+                console.log(cadastroForm);
+
+                createForm(cadastroForm);
+                $("#questionForm")[0].reset();
+                LCdisplayMessage("Criado!");
+                LCpaginaInicial();
+                GV_imagemdesitecarregando.classList.add('GV_esconder');
+              }catch(error){
+                GV_imagemdesitecarregando.classList.add('GV_esconder');
+                if (error.message === 'Failed to fetch') {
+
+                  console.error('Erro de rede: Não foi possível acessar o servidor. Ele pode estar fora do ar ou o endereço pode estar incorreto.');
+                  LCdisplayMessage('ERRO: Servidor nao encontrado.');
+
+                } else if (error.message.includes('NetworkError') || error.message.includes('TypeError: Failed to fetch')) {
+
+                  console.error('Erro de rede: Falha na conexão. Verifique a rede ou o servidor.');
+                  LCdisplayMessage('ERRO: Servidor nao encontrado.');
+
+                } else if(error.message == 'Senhas não coincidem!'){
+
+                  LCdisplayMessage('ERRO: Senha e confirmação não coincidem!');
+
+                } else if(error.message == 'Senha incorreta!'){
+
+                  LCdisplayMessage('ERRO: Senha incorreta!');
+
+                } else if(error.message == 'Preencha o formulário corretamente.'){
+                  console.log('Teste!');
+                  LCdisplayMessage("Preencha o formulário corretamente.");
+
+                }
+              }
+            });
+
+            $("#btnClear").click(function () {
+                $("#questionForm")[0].reset();
+            });
+            /*$("#btnInsert").click(async function () {
+                if (!$('#questionForm')[0].checkValidity()) {
+                    LCdisplayMessage("Preencha o formulário corretamente.");
+                    return;
+                }
+                console.log("Falhou!");
+                let user = LCgetUser();
+                var senhaL = user.senha;
+
+                let senha = $("#inputSenha").val();
+                let confirma = $("#inputConfirma").val();
+                
+                if( senha !== senhaL) {
+                    LCdisplayMessage("Senha errada!");
+                    return;
+                }
+
+                if (senha !== confirma) {
+                    LCdisplayMessage("As senhas não coincidem. Por favor, tente novamente.");
+                    return;
+                }
+                let gv_idong = await AC_obterDados();
+                
+                
+                let cadastroForm = {
+                    id: Date.now().toString(),
+                    usuarioid: user.id,
+                    idanimal: new URLSearchParams(window.location.search).get('id')
+                };
+
+                createForm(cadastroForm);
+                $("#questionForm")[0].reset();
+                LCdisplayMessage("Criado!");
+                LCpaginaInicial();
+            });
+
+            $("#btnClear").click(function () {
+                $("#questionForm")[0].reset();
+            });*/
+            GV_imagemdesitecarregando.classList.add('GV_esconder');
+          
+        }
+
+        function randomNumber() {
+            return Math.floor(Math.random() * 100);
+        }
+    </script>
+</body>
+
+</html>
